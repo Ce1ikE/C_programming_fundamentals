@@ -1,0 +1,113 @@
+/*
+
+	C Fundamentals: Labo YT5883
+	Exercices from "Cprogrammingfundamentals2020"
+
+	Name: Celik
+	Firstname:Ennis
+	Class: 1EICT
+
+*/
+
+
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+#define Max 42
+
+
+/* Function declarations */
+
+void Hello(void);
+void Random_generator(int[]);
+
+int main(void)
+{
+	/* Exercice 7.15
+
+	Assignment:
+	Write a program that generates 6 different random numbers in the 
+	interval [1, 42]. Use an array to store the numbers and to make sure all 
+	6 numbers are different.
+
+	*/
+
+	printf("\n\t----\tDit is oefening 7.15 van 'Cprogrammingfundamentals2020' Pg122\t----\n\n\n\n");
+
+	Hello();
+
+	int Array[Max];
+
+	Random_generator(Array);
+
+	for (int i = 0; i < Max; i++)
+	{
+		printf(" %2d ",Array[i]);
+	}
+	
+	printf("\n\n\n");
+
+	return 0;
+}
+
+
+
+void Random_generator(int x[])
+{
+
+	srand(time(NULL));
+
+	int i;
+	i = 0;
+	int Duplicate;
+
+
+	while (i < Max)
+	{
+		
+		do
+		{
+			Duplicate = 0;
+			x[i] = rand() % 42 + 1;
+			for (int t = 0; t < i; t++)
+			{
+				if (x[i] == x[t])
+				{
+					Duplicate = 1;
+				}
+			}
+
+		} while (Duplicate);
+		i++;
+	}
+
+}
+
+
+
+
+
+
+
+
+void Hello(void)
+{
+	printf("\n\n");
+
+	printf("\n      \x5F\x5F\x5F\x5F          \x5F\x5F\x5F\x5F           \x5F\x5F\x5F\x5F        \x5F\x5F\x5F\x5F        \x5F\x5F\x5F\x5F                         ");
+	printf("\n     \x2F   \x2F\x5C        \x2F   \x2F\x5C         \x2F   \x2F\x5C      \x2F   \x2F\x5C      \x2F   \x2F\x5C                                       ");
+	printf("\n    \x2F   \x2F\x3A\x2F       \x2F   \x2F\x3A\x3A\x5C       \x2F   \x2F\x3A\x2F     \x2F   \x2F\x3A\x2F     \x2F   \x2F\x3A\x3A\x5C                 ");
+	printf("\n   \x2F   \x2F\x3A\x2F       \x2F   \x2F\x3A\x2F\x5C\x3A\x5C     \x2F   \x2F\x3A\x2F     \x2F   \x2F\x3A\x2F     \x2F   \x2F\x3A\x2F\x5C\x3A\x5C     ");
+	printf("\n  \x2F   \x2F\x3A\x3A\x5C \x5F\x5F\x5F  \x2F   \x2F\x3A\x3A\x5C \x5C\x3A\x5C   \x2F   \x2F\x3A\x2F     \x2F   \x2F\x3A\x2F     \x2F   \x2F\x3A\x2F  \x5C\x3A\x5C    ");
+	printf("\n \x2F\x5F\x5F\x5F\x2F\x3A\x2F\x5C\x3A\x5C  \x2F\x5C\x2F\x5F\x5F\x5F\x2F\x3A\x2F\x5C\x3A\x5C \x5C\x3A\x5C \x2F\x5F\x5F\x5F\x2F\x3A\x2F     \x2F\x5F\x5F\x5F\x2F\x3A\x2F     \x2F\x5F\x5F\x5F\x2F\x3A\x2F \x5C\x5F\x5F\x5C\x3A\x5C    ");
+	printf("\n \x5C\x5F\x5F\x5F\x5C\x2F  \x5C\x3A\x5C\x2F\x3A\x2F\x5C   \x5C\x3A\x5C \x5C\x3A\x5C\x5F\x5C\x2F \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x5C \x2F  \x2F\x3A\x2F  ");
+	printf("\n      \x5C\x5F\x5F\x5F\x5C\x3A\x3A\x2F  \x5C   \x5C\x3A\x5C \x5C\x3A\x5C    \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x5C  \x2F\x3A\x2F     ");
+	printf("\n      \x2F   \x2F\x3A\x2F    \x5C   \x5C\x3A\x5C\x5F\x5C\x2F     \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x5C\x2F\x3A\x2F       ");
+	printf("\n     \x2F\x5F\x5F\x5F\x2F\x3A\x2F      \x5C   \x5C\x3A\x5C        \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x5C     \x5C   \x5C\x3A\x3A\x2F                   ");
+	printf("\n     \x5C\x5F\x5F\x5F\x5C\x2F        \x5C\x5F\x5F\x5F\x5C\x2F         \x5C\x5F\x5F\x5F\x5C\x2F      \x5C\x5F\x5F\x5F\x5C\x2F      \x5C\x5F\x5F\x5F\x5C\x2F   ");
+
+	printf("\n\n\n");
+
+
+}
